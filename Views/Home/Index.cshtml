@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/styles.css">
+@model DojoSurvey;
+<div class="container">
+    <form method="post" asp-action="Submission" asp-controller="Home">
+        <div class="formRow">
+            <div class="formItem">
+                <label asp-for="Name">Your Name:</label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formItem">
+                <label asp-for="Location">Dojo Location:</label>
+                <select asp-for="Location">
+                    <option value="">Selecciona una ubicación</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Santiago">Santiago</option>
+                    <option value="New York">New York</option>
+                </select>
+                <span asp-validation-for="Location"></span>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formItem">
+                <label asp-for="Language">Favorite Language:</label>
+                <select asp-for="Language">
+                    <option value="">Selecciona una ubicación</option>
+                    <option value="C#">C#</option>
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+                <span asp-validation-for="Language"></span>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formItem">
+                <label asp-for="Comment">Comment (optional):</label>
+                <textarea asp-for="Comment"></textarea>
+                <span asp-validation-for="Comment"></span>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formItem">
+                <label asp-for="DateToday">Date:</label>
+                <input asp-for="DateToday" type="date" />
+                <span asp-validation-for="DateToday"></span>
+            </div>
+        </div>
+        <div class="btnSubmit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
